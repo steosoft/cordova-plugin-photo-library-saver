@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-photo-library-saver" version="0.1"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PhotoLibraryPlugin</name>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PhotoLibraryPlugin">
+                <param name="ios-package" value="PhotoLibraryPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/PhotoLibraryPlugin.h" />
+        <source-file src="src/ios/PhotoLibraryPlugin.m" />
+
+        <!-- Required permissions in Info.plist -->
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+            <string>App requires access to photos to save photos and videos.</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSPhotoLibraryAddUsageDescription">
+            <string>App requires access to add photos and videos to media library.</string>
+        </config-file>
+    </platform>
+</plugin>
