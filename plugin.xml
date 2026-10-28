@@ -5,6 +5,10 @@
     <name>PhotoLibraryPlugin</name>
 
     <platform name="ios">
+        <js-module src="www/photoLibrary.js" name="photoLibrary">
+            <clobbers target="cordova.plugins.photoLibrary" />
+        </js-module>
+
         <config-file target="config.xml" parent="/*">
             <feature name="PhotoLibraryPlugin">
                 <param name="ios-package" value="PhotoLibraryPlugin"/>
